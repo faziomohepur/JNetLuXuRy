@@ -1,0 +1,113 @@
+Cấu trúc project hiện tại:
+
+```text
+JNetLuXuRy/
+├── index.html
+├── functions/
+│   └── api/
+│       └── booking.js
+├── wrangler.jsonc
+├── README.md
+└── .git/
+```
+
+Nội dung `wrangler.jsonc`:
+
+```jsonc
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tmc-gradcar-rach-gia",
+  "compatibility_date": "2026-09-02",
+  "pages_build_output_dir": "."
+}
+```
+
+**Các lệnh deploy Cloudflare Pages**
+
+```bash
+cd "E:/#Repo-Local/JNetLuXuRy"
+```
+
+Kiểm tra đăng nhập:
+
+```bash
+wrangler whoami
+```
+
+Liệt kê project:
+
+```bash
+wrangler pages project list
+```
+
+Tạo project lần đầu:
+
+```bash
+wrangler pages project create test
+```
+
+Deploy toàn bộ file và Pages Function:
+
+```bash
+wrangler pages deploy . --project-name test --commit-dirty=true
+```
+
+Lệnh deploy đã chạy thành công trước đó:
+
+```text
+https://616991f8.tmc-gradcar-rach-gia.pages.dev
+```
+
+Xem các lần deploy:
+
+```bash
+wrangler pages deployment list --project-name test
+```
+
+Xem log Function:
+
+```bash
+wrangler pages deployment tail --project-name test
+```
+
+**Kiểm tra trước khi deploy**
+
+```bash
+node --check functions/api/booking.js
+```
+
+```bash
+git diff --check -- index.html
+```
+
+```bash
+git status
+```
+
+**Đẩy code lên GitHub**
+
+```bash
+git add index.html functions/api/booking.js wrangler.jsonc
+git commit -m "Update taxi booking page and email function"
+git push
+```
+
+`git push` chỉ đẩy code lên GitHub. Muốn cập nhật Cloudflare bằng lệnh thủ công thì vẫn chạy:
+
+```bash
+wrangler pages deploy . --project-name tmc-gradcar-rach-gia --commit-dirty=true
+```
+
+Lưu ý: Không thêm `send_email` vào `wrangler.jsonc` của Pages, vì Pages không nhận cấu hình đó trong file này. Email binding `EMAIL` cần thêm tại:
+
+```text
+Cloudflare Dashboard
+→ Workers & Pages
+→ tmc-gradcar-rach-gia
+→ Settings
+→ Functions
+→ Bindings
+→ Add binding
+→ Email
+→ Variable name: EMAIL
+```

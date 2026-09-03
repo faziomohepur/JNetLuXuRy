@@ -1,6 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tmc-gradcar-rach-gia",
+  "name": "test",
   "compatibility_date": "2026-09-02",
-  "pages_build_output_dir": "."
+  "pages_build_output_dir": "testw"
+  "main": "src/index.ts"
+}
+{
+ "assets": {
+      "directory": "./testw"
+    }
 }

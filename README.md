@@ -37,15 +37,15 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
   ├── &lt;section id="home" class="hero"&gt;        Khu vực đầu trang (banner)
   │   ├── .hero-main
   │   │   ├── Tiêu đề "TAXI RẠCH GIÁ"
-  │   │   ├── Tagline "AN TOÀN – ÊM ÁI – THÂN THIỆN MÔI TRƯỜNG 🌿"
-  │   │   ├── .benefits (4 mục)                 Xe điện hiện đại / An toàn tuyệt đối /
-  │   │   │                                     Thân thiện môi trường / Phục vụ 24/7
+  │   │   ├── Tagline "PHỤC VỤ TẬN TÂM - ĐI XE BÊN EM BẢO ĐẢM KHÁCH HÀI LÒNG 🌿"
+  │   │   ├── .benefits (4 mục)                Khách Hàng Hỏi Giá / Không Đặt Xe Cũng Được / Chỉ Cần Cười Tươi Là Được...
+  │   │   │                                     Xe Mới - Máy Lạnh Công Xuất Cao - Không Mùi / Phục vụ 24/7.
   │   │   └── .cars-photo                       Ảnh đội xe (ảnh nhúng base64)
   │   └── #dat-xe .booking                      Form đặt xe
   │       └── form#form
   │           ├── input#name, #phone           Họ tên, số điện thoại
-  │           ├── select#vehicle                Loại xe (điện / xăng)
-  │           ├── input#time                     Thời gian đón
+  │           ├── select#vehicle                Loại xe (4 / 7)
+  │           ├── input#time                     Thời gian đón <-- Loại Bỏ
   │           ├── input#pickup, #dropoff        Điểm đón, điểm đến
   │           ├── textarea#note                 Ghi chú
   │           └── button "ĐẶT XE NGAY"          Submit → gửi qua Zalo (xem phần Script)
@@ -54,15 +54,16 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
   │   ├── Đưa đón sân bay
   │   ├── Đi tỉnh 2 chiều
   │   ├── Du lịch tham quan
-  │   ├── Hợp đồng doanh nghiệp
+  │   ├── Hợp đồng Xe, Xế Riêng
   │   ├── Sự kiện – cưới hỏi
+      |-- Chạy Tài - Lái Hộ 
   │   └── .green-banner
   │
   ├── &lt;section id="xe" class="vehicle-section"&gt; Danh sách xe
   │   ├
   │   │
   │   └── "Chi Tiết các dòng Xe 4–7 chỗ"
-  │       └── Toyota Vios / Hyundai Accent / Toyota Innova / Kia Carnival / VinFast VF6 / VF7 / VF8 / Limo Green.v.v..
+  │       └── Honda BRV  /  Honda City  /  Toyota Vios / Hyundai Accent / Toyota Innova / Kia Carnival / VinFast VF6 / VF7 / VF8 / Limo Green.v.v..
   │       (mỗi xe: ảnh, danh sách đặc điểm (Nội dung Hiện) và Nội dung ẩn sẻ đầy đủ thông tin chi tiết cấu tạo đặc điểm của dòng xe đó. hơn, và chỉ hiện khi kéo chuốt vào hiện )
   │
   ├── &lt;footer id="lien-he" class="footer"&gt;    Thông tin liên hệ
@@ -77,8 +78,9 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
   │
   └── &lt;script&gt; (2 khối JS cuối trang)
    ├── Toggle menu mobile (mở/đóng nav)
-   ├── Xử lý submit form đặt xe bắt buộc phải auto sendto tới mail [bổ sung sau]
+   ├── Xử lý submit form đặt xe bắt buộc phải auto sendto tới mail — bổ sung sau
    │   mở Zalo (zalo.me) kèm nội dung đã điền
    └── Ảnh img nén uri và kiểm tra load chậm hay nhanh nếu có thể tối ưu thêm
-
+	172.66.47.24	
+	172.66.44.232	
  ```text

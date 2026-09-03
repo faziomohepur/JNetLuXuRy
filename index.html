@@ -12,6 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0907" />
   <title>TmC GradCar Taxi Rạch Giá | 0775 856 456</title>
   <meta name="description"
     content="Taxi'sGrab Rạch Giá LuXuRy - Dịch vụ đặt xe taxi 4 chỗ, 7 chỗ, 16 chỗ giá rẻ tại Rạch Giá, An Giang, Kiên Giang. Phục vụ 24/7, đưa đón sân bay, đi tỉnh, bến tàu." />
@@ -193,6 +194,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: linear-gradient(135deg, #edc96f, var(--contact-gold-hover));
       transform: translateY(-2px);
       box-shadow: 0 10px 22px rgba(169, 115, 22, 0.36);
+    }
+
+    .hero .btn-call,
+    .hero .btn-zalo {
+      min-height: 48px;
+      padding: 13px 20px;
+      font-size: 0.92rem;
+      flex: 1 1 220px;
     }
 
     .btn-gold {
@@ -806,7 +815,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .form-field input,
-    .form-field select {
+    .form-field select,
+    .form-field textarea {
       width: 100%;
       padding: 13px 14px;
       border: 1.5px solid #d9cebe;
@@ -819,7 +829,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .form-field input:focus,
-    .form-field select:focus {
+    .form-field select:focus,
+    .form-field textarea:focus {
       border-color: var(--gold-dark);
       background: #ffffff;
       box-shadow: 0 0 0 3px rgba(214, 165, 59, 0.18);
@@ -922,6 +933,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gap: 8px;
     }
 
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      z-index: 9999;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--primary-dark);
+      color: var(--gold-light);
+      box-shadow: 0 5px 16px rgba(11, 9, 7, 0.34);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
     /* Map Compass Accent Badge */
     .fixed-compass-badge {
       display: inline-flex;
@@ -972,45 +1014,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       50% { transform: scale(1.5); opacity: 0.4; }
     }
   /* Top Big Call CTA */
-    .big-call-wrapper {
-      text-align: center;
-      margin-top: 100px;
-      padding: 0 25px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .big-call-box {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--contact-gold) 100%);
-      color: var(--primary-dark);
-      font-weight: 400;
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px 32px;
-      border-radius: 50px;
-      box-shadow: 0 8px 24px rgb(87, 221, 255);  
-      animation: phone-shake 2.5s ease-in-out infinite;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      width: 100%;
-      max-width: 440px;
-      border: 1.2px solid rgba(214, 165, 59, 0.75);
-    }
-
-    .big-call-box i {
-      font-size: 22px;
-      animation: phone-shake 2.5s ease-in-out infinite;
-      color: var(--gold-light);
-    }
-
-    .big-call-box:hover, .big-call-box:active {
-      transform: translateY(-2deg);
-      box-shadow: 0 12px 28px rgba(87, 221, 255);
-    }
-
     .fixed-btn-call,
     .fixed-btn-zalo {
       display: inline-flex;
@@ -1082,18 +1085,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Tối ưu kích thước vừa vặn chạy chủ yếu trên Mobile */
     @media (max-width: 576px) {
       .fixed-action-bar {
-        bottom: 14px;
-        left: 12px;
-        gap: 7px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        max-width: calc(100% - 20px);
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        padding: 5px;
+        border: 1px solid rgba(214, 165, 59, 0.45);
+        border-radius: 12px;
+        background: rgba(11, 9, 7, 0.94);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       }
       .fixed-compass-badge {
-        padding: 3px 8px;
-        font-size: 0.65rem;
+        padding: 7px 8px;
+        font-size: 0.62rem;
       }
       .fixed-btn-call,
       .fixed-btn-zalo {
-        padding: 7px 12px;
-        font-size: 0.78rem;
+        padding: 7px 9px;
+        font-size: 0.68rem;
+      }
+      .fixed-compass-badge .compass-blip-dot {
+        display: none;
       }
     }
 
@@ -1122,6 +1138,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (max-width: 768px) {
       .header-inner {
         height: 68px;
+        gap: 10px;
+      }
+      .brand {
+        min-width: 0;
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+      .brand-text strong {
+        font-size: 0.9rem;
+      }
+      .brand-text small {
+        font-size: 0.56rem;
+        letter-spacing: 0.08em;
       }
       .menu-toggle {
         display: block;
@@ -1170,11 +1202,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hero-content h1 {
         font-size: clamp(2rem, 10vw, 2.75rem);
       }
+      .hero {
+        padding: 54px 0 64px;
+      }
+      .hero .btn-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .hero .btn-call,
+      .hero .btn-zalo {
+        width: 100%;
+        min-height: 48px;
+      }
       .hero-desc {
         font-size: 0.98rem;
       }
       .form-field input,
-      .form-field select {
+      .form-field select,
+      .form-field textarea {
         font-size: 0.9rem;
       }
       .submit-btn-large {
@@ -1190,6 +1236,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       body {
         padding-bottom: 75px; /* Leave space for sticky bottom bar */
+      }
+
+      .back-to-top {
+        right: 12px;
+        bottom: 14px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .fixed-action-bar {
+        display: none;
       }
     }
   </style>
@@ -1208,8 +1265,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fa-solid fa-clock gold-light"></i> <strong>Taxi'sGrab Rạch Giá LuXuRy</strong> • Phục Vụ 24/24 Xuyên Đêm • Có Xe Sau 5 Phút!
       </div>
       <div class="topbar-contact">
-        <div a href="tel:0775856456"><i class="fa-solid fa-phone"></i> Gọi: 0775 856 456</a></div>
-        <div a href="https://zalo.me/0328181085" target="_blank" rel="noopener"><i class="fa-solid fa-comment-dots"></i>Chat Zalo</a></div>
+        <a href="tel:0775856456"><i class="fa-solid fa-phone"></i> Gọi: 0775 856 456</a>
+        <a href="https://zalo.me/0328181085" target="_blank" rel="noopener"><i class="fa-solid fa-comment-dots"></i>Chat Zalo</a>
       </div>
     </div>
   </div>
@@ -1217,7 +1274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="#trang-chu">
+      <a class="brand" href="#home">
         <img class="brand-logo" src="https://i.postimg.cc/Rhxkb83B/LOGOlx.jpg" alt="Logo Taxi Grab Rạch Giá Luxury" />
         <span class="brand-text">
           <strong>Taxi'sGrab Rạch Giá</strong>
@@ -1225,21 +1282,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </span>
       </a>
 
-  <!-- Big Call Box Banner -->
-  <div class="big-call-wrapper">
-    <a href="tel:0916244243" class="big-call-box" title="Gọi Ngay Taxi Rạch Giá">
-      <i class="fas fa-phone-volume"></i> GỌI XE: 0775 856 456
-    </a>
-  </div>
-  
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Mở menu">☰</button>
 
       <nav class="nav" id="main-nav">
-        <a href="#trang-chu">Trang Chủ</a>
+        <a href="#home">Trang Chủ</a>
         <a href="#gioi-thieu">Giới Thiệu</a>
-        <a href="#doi-xe">Đội Xe</a>
+        <a href="#dich-vu">Dịch Vụ</a>
+        <a href="#xe">Đội Xe</a>
         <a href="#bang-gia">Bảng Giá</a>
         <a href="#tuyen-xe">Tuyến Đường</a>
+        <a href="#tin-tuc">Tin Tức</a>
         <a href="#dat-xe">Đặt Xe</a>
         <a href="#lien-he">Liên Hệ</a>
       </nav>
@@ -1249,7 +1301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero" id="trang-chu">
+    <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-content">
           <span class="eyebrow" style="color: var(--gold-light);">DỊCH VỤ TAXI CAO CẤP 24/7</span>
@@ -1259,10 +1311,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
 
           <div class="btn-group">
-            <a class="btn-call" href="tel:0775856456" style="padding: 15px 28px; font-size: 1.05rem;">
+            <a class="btn-call" href="tel:0775856456">
               <i class="fa-solid fa-phone-volume"></i> GỌI XE: 0775 856 456
             </a>
-            <a class="btn-zalo" href="https://zalo.me/0328181085" target="_blank" rel="noopener" style="padding: 15px 28px; font-size: 1.05rem;">
+            <a class="btn-zalo" href="https://zalo.me/0328181085" target="_blank" rel="noopener">
               <i class="fa-solid fa-comments"></i> CHAT ZALO NGAY
             </a>
           </div>
@@ -1319,6 +1371,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <!-- Services Section -->
+    <section class="about" id="dich-vu">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">DỊCH VỤ TMC</span>
+          <h2 class="section-title">Đặt Đúng Chuyến Xe Cho Mọi Hành Trình</h2>
+          <p class="section-lead">Từ chuyến đi nội ô đến hợp đồng đường dài, TmC tư vấn loại xe và báo giá rõ ràng trước khi khởi hành.</p>
+        </div>
+        <div class="quick-grid">
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-plane-departure"></i></div><div class="quick-text"><strong>Đưa đón sân bay</strong><small>Tân Sơn Nhất, Cần Thơ và các sân bay miền Tây.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-road"></i></div><div class="quick-text"><strong>Đi tỉnh hai chiều</strong><small>Chủ động thời gian, tối ưu chi phí chiều về.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-umbrella-beach"></i></div><div class="quick-text"><strong>Du lịch tham quan</strong><small>Xe riêng theo giờ, ngày hoặc lịch trình.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-briefcase"></i></div><div class="quick-text"><strong>Hợp đồng xe, xế riêng</strong><small>Phục vụ công tác, sự kiện và đưa đón chuyên gia.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-champagne-glasses"></i></div><div class="quick-text"><strong>Sự kiện, cưới hỏi</strong><small>Đội xe chỉn chu cho những dịp quan trọng.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-car-side"></i></div><div class="quick-text"><strong>Chạy tài, lái hộ</strong><small>Hỗ trợ di chuyển an toàn khi bạn cần người lái xe.</small></div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="gioi-thieu">
       <div class="container about-grid">
@@ -1346,7 +1417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Fleet Showcase Section (Mới bổ sung theo yêu cầu khách hàng) -->
-    <section class="fleet-section" id="doi-xe">
+    <section class="fleet-section" id="xe">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">ĐỘI XE ĐỜI MỚI HÙNG HẬU</span>
@@ -1616,7 +1687,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- Booking Section (Sửa biểu mẫu đúng 5 mục theo yêu cầu: Tên, SĐT, Loại xe, Điểm đón, Điểm đến & trỏ về email thienduongkg3536@gmail.com) -->
+    <!-- News Section -->
+    <section class="about" id="tin-tuc">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">TIN TỨC VÀ KINH NGHIỆM</span>
+          <h2 class="section-title">Thông Tin Hữu Ích Cho Chuyến Đi</h2>
+          <p class="section-lead">Kinh nghiệm đặt xe, chuẩn bị hành lý và lựa chọn chuyến đi phù hợp từ Rạch Giá.</p>
+        </div>
+        <div class="quick-grid">
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-calendar-check"></i></div><div class="quick-text"><strong>Đặt xe sớm</strong><small>Chủ động chọn đúng loại xe và giờ đón.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-suitcase"></i></div><div class="quick-text"><strong>Chuẩn bị hành lý</strong><small>Thông báo hành lý để tài xế sắp xếp xe phù hợp.</small></div></div>
+          <div class="quick-item"><div class="quick-icon"><i class="fa-solid fa-route"></i></div><div class="quick-text"><strong>Lịch trình rõ ràng</strong><small>Gửi đủ điểm đón và điểm đến để báo giá chính xác.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section (Sửa biểu mẫu đúng 6 mục theo yêu cầu) -->
     <section class="booking-section" id="dat-xe">
       <div class="container">
         <div class="booking-grid">
@@ -1639,25 +1726,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="booking-form-box">
-            <h3>Thông Tin Đặt Xe (Chỉ 5 Bước)</h3>
+            <h3>Thông Tin Đặt Xe</h3>
             
             <form 
               id="bookingForm"
               name="dat-xe" 
-              method="POST" 
-              action="/cam-on"
-              data-netlify="true" 
-              netlify-honeypot="bot-field"
+              method="POST"
             >
-              <!-- Required Netlify Forms hidden fields -->
-              <input type="hidden" name="form-name" value="dat-xe" />
-              <input type="hidden" name="email-nhan-thong-bao" value="thienduongkg3536@gmail.com" />
-              
-              <!-- Honeypot anti-spam -->
-              <p class="honeypot">
-                <label>Đừng điền ô này: <input name="bot-field" /></label>
-              </p>
-
               <div class="form-grid-short">
                 <!-- 1. Tên -->
                 <div class="form-field">
@@ -1695,6 +1770,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <label for="diem-den">5. Điểm Đến *</label>
                   <input type="text" id="diem-den" name="diem-den" required placeholder="Ví dụ: Bến tàu Hà Tiên, Cần Thơ, Sài Gòn..." />
                 </div>
+
+                <!-- 6. Ghi chú -->
+                <div class="form-field">
+                  <label for="ghi-chu">6. Ghi Chú</label>
+                  <textarea id="ghi-chu" name="ghi-chu" rows="3" placeholder="Số lượng hành khách, hành lý hoặc yêu cầu khác..."></textarea>
+                </div>
               </div>
 
               <button class="submit-btn-large" type="submit">
@@ -1702,8 +1783,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </button>
 
               <p class="form-note">
-                <i class="fa-solid fa-shield-halved"></i> Thông tin được bảo mật và gửi trực tiếp tới email: <strong>thienduongkg3536@gmail.com</strong>
+                <i class="fa-solid fa-shield-halved"></i> Thông tin sẽ được gửi tới: <strong>admin@taxirachgialuxury.com</strong>
               </p>
+              <p class="form-note" id="booking-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -1716,7 +1798,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="#trang-chu">
+          <a class="brand" href="#home">
             <img class="brand-logo" src="https://i.postimg.cc/Rhxkb83B/LOGOlx.jpg" alt="Logo Taxi Grab Rạch Giá Luxury" />
             <span class="brand-text">
               <strong>Taxi'sGrab Rạch Giá</strong>
@@ -1772,10 +1854,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Fixed Sticky Floating Action Bar (Đặc tại góc trái, Nút Gọi ở trên, Nút Zalo ở dưới, Điểm nhấn La Bàn) -->
   <div class="fixed-action-bar">
     <!-- Điểm nhấn La bàn bản đồ -->
-    <div class="fixed-compass-badge"  href="https://maps.app.goo.gl/u6CahdyqzWonY3hCA" title="La bàn định vị Taxi Rạch Giá">
+    <a class="fixed-compass-badge" href="https://maps.app.goo.gl/u6CahdyqzWonY3hCA" target="_blank" rel="noopener" title="Mở vị trí Taxi Rạch Giá trên Google Maps">
       <i class="fa-solid fa-compass"></i><span>GOOGLE MAP</span>     
       <span class="compass-blip-dot"></span>
-    </div>
+    </a>
 
     <!-- Nút Gọi ở TRÊN -->
     <a class="fixed-btn-call" href="tel:0775856456" aria-label="Gọi điện đặt xe ngay">
@@ -1787,6 +1869,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <i class="fa-solid fa-comments"></i> <span>CHAT ZALO</span>
     </a>
   </div>
+
+  <a class="back-to-top" id="back-to-top" href="#home" aria-label="Cuộn lên đầu trang" title="Cuộn lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
 
   <!-- JavaScript for Navigation & Form Handling -->
   <script>
@@ -1806,11 +1892,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // Handle Form submission cleanly
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    // Send booking data through the Cloudflare Pages Function.
     const bookingForm = document.getElementById('bookingForm');
+    const bookingStatus = document.getElementById('booking-status');
     if (bookingForm) {
-      bookingForm.addEventListener('submit', function(e) {
-        // Netlify Forms xử lý dữ liệu và chuyển tới trang cảm ơn qua thuộc tính action.
+      bookingForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitButton = bookingForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG GỬI...';
+        bookingStatus.textContent = '';
+
+        try {
+          const response = await fetch('/api/booking', {
+            method: 'POST',
+            body: new FormData(bookingForm)
+          });
+          const result = await response.json();
+          if (!response.ok || !result.ok) throw new Error(result.message);
+          bookingStatus.textContent = result.message;
+          bookingForm.reset();
+        } catch (error) {
+          bookingStatus.textContent = error.message || 'Chưa gửi được yêu cầu. Vui lòng gọi 0775 856 456.';
+        } finally {
+          submitButton.disabled = false;
+          submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> GỬI YÊU CẦU ĐẶT XE NGAY';
+        }
       });
     }
   </script>

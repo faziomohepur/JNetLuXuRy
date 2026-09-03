@@ -1,6 +1,5 @@
 
-
-# Dịch Vụ TmC GradCar Rạch Giá - 0775 856 456.
+# Dịch Vụ TmC GradCar Rạch Giá - 0775 856 456
 
 Trang landing page giới thiệu dịch vụ **Dịch Vụ TmC Hợp Đồng Xe Du Lịch 4-7-16 Chỗ** — GradCar Rạch Giá ⚡Số Điện Thoại Booking: 0775 856 456
 
@@ -9,7 +8,7 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
 
 ## Cấu trúc file `index.html`
 
-```
+```text
 index.html
 ├── <head>                         Khai báo meta, title, font, icon
 │   ├── meta charset/viewport/theme-color

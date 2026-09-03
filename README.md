@@ -56,7 +56,7 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
   │   ├── Du lịch tham quan
   │   ├── Hợp đồng Xe, Xế Riêng
   │   ├── Sự kiện – cưới hỏi
-      |-- Chạy Tài - Lái Hộ 
+      |-- Chạy Tài - Lái Hộ
   │   └── .green-banner
   │
   ├── &lt;section id="xe" class="vehicle-section"&gt; Danh sách xe
@@ -81,6 +81,7 @@ Toàn bộ website là trang tĩnh: **`index.html`** (HTML + CSS + JS, không bu
    ├── Xử lý submit form đặt xe bắt buộc phải auto sendto tới mail — bổ sung sau
    │   mở Zalo (zalo.me) kèm nội dung đã điền
    └── Ảnh img nén uri và kiểm tra load chậm hay nhanh nếu có thể tối ưu thêm
-	172.66.47.24	
-	172.66.44.232	
+    172.66.47.24
+    172.66.44.232
+
  ```text

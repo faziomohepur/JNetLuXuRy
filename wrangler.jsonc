@@ -1,12 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "test",
-  "compatibility_date": "2026-09-02",
-  "pages_build_output_dir": "testw"
+  "name": "taxirachgia-tmc",
+  "compatibility_date": "2026-09-04",
+  "pages_build_output_dir": "taxirg"
   "main": "src/index.ts"
 }
 {
  "assets": {
-      "directory": "./testw"
+      "directory": "./taxirg"
     }
 }

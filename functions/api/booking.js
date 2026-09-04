@@ -1,5 +1,5 @@
-const recipient = 'admin@taxirachgialuxury.com';
-const sender = 'admin@taxirachgialuxury.com';
+const recipient = 'info@mail.tmc.io.vn';
+const sender = 'hoangthaiminhkg@gmail.com';
 
 function clean(value, maxLength = 500) {
   return String(value || '').trim().slice(0, maxLength);
